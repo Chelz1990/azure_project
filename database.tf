@@ -29,7 +29,7 @@ resource "random_string" "dbname" {
 resource "azurerm_mysql_flexible_server" "wordpress" {
   name                = unknown
   location            = unknown
-  resource_group_name = unknown
+  resource_group_name = azurerm_resource_group.azp_rg.name
 
   administrator_login          = unknown
   administrator_password = unknown
