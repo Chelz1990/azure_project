@@ -1,6 +1,6 @@
 # Create random resource for the database login
 resource "random_string" "login" {
-  length           = 6
+  length           = 8
   special          = false
   override_special = true
   upper            = false
