@@ -17,12 +17,3 @@ resource "azurerm_resource_group" "azp_rg" {
   name     = "azure-project-resource-group"
   location = "eastus"
 }
-
-
-# call to Ansible playbook
-resource "null_resource" "ansible_provisioner" {
-  provisioner "local-exec" {
-    command = "ansible-playbook -i wordpress.yml"
-    working_dir = "C:\Users\chelz\OneDrive\Desktop\azure_project\azure_project\ansible"
-  }
-}
