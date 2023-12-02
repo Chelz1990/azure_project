@@ -8,7 +8,7 @@ resource "random_string" "dbname" {
 }
 
 resource "azurerm_mysql_flexible_server" "wordpress" {
-  name                   = "${ransom_string.dbname.result}azpproject.wordpress.com"
+  name                   = "${random_string.dbname.result}azpproject.wordpress.com"
   resource_group_name    = azurerm_resource_group.azp_rg.name
   location               = azurerm_resource_group.azp_rg.location
 }
