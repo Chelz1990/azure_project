@@ -19,9 +19,10 @@ resource "random_string" "password" {
 resource "random_string" "dbname" {
   length  = 6
   lower   = true
-  numeric = false
+  numeric = true
   special = false
   upper   = false
+  min_numeric = 3
 }
 
 # Create MySQL Server
