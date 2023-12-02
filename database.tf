@@ -27,31 +27,31 @@ resource "random_string" "dbname" {
 
 # Create MySQL Server
 resource "azurerm_mysql_flexible_server" "wordpress" {
-  name                = 
+  name                = unknown
   location            = azurerm_resource_group.azp_rg.location
   resource_group_name = azurerm_resource_group.azp_rg.name
 
-  administrator_login          = 
+  administrator_login          = unknown
   administrator_password =
-  delegated_subnet_id          = 
-  geo_redundant_backup_enabled = 
-  private_dns_zone_id          = 
-  sku_name                     = 
-  version                      = 
+  delegated_subnet_id          = unknown
+  geo_redundant_backup_enabled = unknown
+  private_dns_zone_id          = unknown
+  sku_name                     = unknown
+  version                      = unknown
   zone = 1
 
   high_availability {
-    mode                      = 
-    standby_availability_zone = 
+    mode                      = unknown
+    standby_availability_zone = unknown
   }
   maintenance_window {
-    day_of_week  = 
-    start_hour   = 
-    start_minute = 
+    day_of_week  = unknown
+    start_hour   = unknown
+    start_minute = unknown
   }
   storage {
-    iops    = 
-    size_gb = 
+    iops    = unknown
+    size_gb = unknown
   }
 
 
