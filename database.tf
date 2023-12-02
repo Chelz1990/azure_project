@@ -15,9 +15,17 @@ resource "random_string" "password" {
   lower = true
 }
 
+# Create random resource for the database login
+resource "random_string" "name" {
+  length           = 6
+  special          = false
+  override_special = true
+  upper            = false
+}
+
 # Create MySQL Server
 resource "azurerm_mysql_flexible_server" "wordpress" {
-  name                = "azure-project-wordpress-server.com"
+  name                = "${random_string.name.result}wordpress-server.com"
   location            = azurerm_resource_group.azp_rg.location
   resource_group_name = azurerm_resource_group.azp_rg.name
 
