@@ -5,6 +5,7 @@ resource "random_string" "login" {
   override_special = true
   upper            = false
   lower            = true
+  numeric          = false
 }
 
 # Create random resource for the database password
