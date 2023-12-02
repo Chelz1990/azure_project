@@ -5,5 +5,5 @@
 #  provisioner "local-exec" {
 #    command = "ansible-playbook wordpress.yml"
 #  }
-}
+
 
