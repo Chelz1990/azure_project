@@ -1,5 +1,5 @@
 ---
-- hosts: ${{" azurerm_linux_virtual_machine.azp_vm"}}
+- hosts: debian
   become: true
   vars_files:
     - vars/default.yml
