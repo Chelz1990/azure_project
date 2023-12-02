@@ -25,40 +25,40 @@ resource "random_string" "dbname" {
   numeric = true
 }
 
-
 # Create MySQL Server
 resource "azurerm_mysql_flexible_server" "wordpress" {
-  name                = "${random_string.dbname.result}wordpress-server.com"
+  name                = 
   location            = azurerm_resource_group.azp_rg.location
   resource_group_name = azurerm_resource_group.azp_rg.name
 
-  administrator_login          = "${random_string.login.result}"
-  administrator_password = "${random_string.password.result}"
-  delegated_subnet_id          = azurerm_subnet.db_subnet.id
-  geo_redundant_backup_enabled = false
-  private_dns_zone_id          = azurerm_private_dns_zone.db_dns.id
-  sku_name                     = "GP_Standard_D2ds_v4"
-  version                      = "8.0.21"
+  administrator_login          = 
+  administrator_password =
+  delegated_subnet_id          = 
+  geo_redundant_backup_enabled = 
+  private_dns_zone_id          = 
+  sku_name                     = 
+  version                      = 
   zone = 1
 
   high_availability {
-    mode                      = "ZoneRedundant"
-    standby_availability_zone = "2"
+    mode                      = 
+    standby_availability_zone = 
   }
   maintenance_window {
-    day_of_week  = 0
-    start_hour   = 8
-    start_minute = 0
+    day_of_week  = 
+    start_hour   = 
+    start_minute = 
   }
   storage {
-    iops    = 360
-    size_gb = 20
+    iops    = 
+    size_gb = 
   }
 
-  depends_on = [azurerm_private_dns_zone_virtual_network_link.db_dns_link]
+
+#  depends_on = [azurerm_private_dns_zone_virtual_network_link.db_dns_link]
   
-  provisioner "local-exec" {
-    command = "ansible-playbook wordpress.yml"
-  }
+#  provisioner "local-exec" {
+#    command = "ansible-playbook wordpress.yml"
+#  }
 }
 
