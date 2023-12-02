@@ -1,9 +1,10 @@
 # Create random resource for the database login
 resource "random_string" "login" {
-  length           = 8
+  length           = 6
   special          = false
-  override_special = "/@£$"
+  override_special = true
   upper            = false
+  lower            = true
 }
 
 # Create random resource for the database password
