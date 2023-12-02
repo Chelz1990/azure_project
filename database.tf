@@ -5,7 +5,7 @@ resource "random_string" "login" {
   override_special = true
   upper            = false
   lower            = true
-  numeric          = true
+  numeric          = false
 }
 
 # Create random resource for the database password
@@ -19,7 +19,7 @@ resource "random_string" "password" {
 
 # Create MySQL Server
 resource "azurerm_mysql_flexible_server" "wordpress" {
-  name                = "${random_string.login.result}-wordpress-server.com"
+  name                = "azp-wordpress-server.com"
   location            = azurerm_resource_group.azp_rg.location
   resource_group_name = azurerm_resource_group.azp_rg.name
 
