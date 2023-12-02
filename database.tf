@@ -17,7 +17,7 @@ resource "random_string" "password" {
 
 # Create MySQL Server
 resource "azurerm_mysql_flexible_server" "wordpress" {
-  name                = "az1tp2ev3cproject"
+  name                = "az1tp2evc3project"
   location            = azurerm_resource_group.azp_rg.location
   resource_group_name = azurerm_resource_group.azp_rg.name
 
@@ -45,9 +45,5 @@ resource "azurerm_mysql_flexible_server" "wordpress" {
   }
 
   depends_on = [azurerm_private_dns_zone_virtual_network_link.db_dns_link]
-  
-  provisioner "local-exec" {
-    command = "ansible-playbook wordpress.yml"
-  }
 }
 

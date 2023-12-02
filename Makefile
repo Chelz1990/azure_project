@@ -5,4 +5,4 @@ apply:
 	terraform apply -auto-approve
 
 destroy:
-	terraform destory -auto-approve
+	terraform destroy -auto-approve
