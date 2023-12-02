@@ -9,7 +9,7 @@ resource "random_string" "name" {
 
 # Create DNS zone
 resource "azurerm_private_dns_zone" "db_dns" {
-  name                = "${random_string.name.result}.${azurerm_mysql_flexible_server.wordpress.name}.com"
+  name                = "${random_string.name.result}.${azurerm_mysql_flexible_server.wordpress.name}"
   resource_group_name = azurerm_resource_group.azp_rg.name
 }
 
