@@ -28,8 +28,8 @@ resource "random_string" "dbname" {
 # Create MySQL Server
 resource "azurerm_mysql_flexible_server" "wordpress" {
   name                = unknown
-  location            = azurerm_resource_group.azp_rg.location
-  resource_group_name = azurerm_resource_group.azp_rg.name
+  location            = unknown
+  resource_group_name = unknown
 
   administrator_login          = unknown
   administrator_password = unknown
