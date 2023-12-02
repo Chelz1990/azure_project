@@ -17,7 +17,7 @@ resource "random_string" "password" {
 
 # Create MySQL Server
 resource "azurerm_mysql_flexible_server" "wordpress" {
-  name                = "aztpevcproject.wordpress.com"
+  name                = "az1tp2ev3cproject.wordpress.com"
   location            = azurerm_resource_group.azp_rg.location
   resource_group_name = azurerm_resource_group.azp_rg.name
 
