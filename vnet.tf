@@ -17,7 +17,7 @@ resource "azurerm_subnet" "vm_subnet" {
 # Create route table association for vm subnet
 resource "azurerm_subnet_route_table_association" "vm_rt" {
   subnet_id      = azurerm_subnet.vm_subnet.id
-  route_table_id = azurerm_route_table.ap_rt.id
+  route_table_id = azurerm_route_table.azp_rt.id
 }
 
 # Create subnet for scale set
@@ -31,7 +31,7 @@ resource "azurerm_subnet" "ss_subnet" {
 # Create route table association for scale set subnet
 resource "azurerm_subnet_route_table_association" "ss_rt" {
   subnet_id      = azurerm_subnet.ss_subnet.id
-  route_table_id = azurerm_route_table.ap_rt.id
+  route_table_id = azurerm_route_table.azp_rt.id
 }
 
 # Create subnet for database
@@ -57,13 +57,13 @@ resource "azurerm_subnet" "db_subnet" {
 # Create route table association for database subnet
 resource "azurerm_subnet_route_table_association" "db_rt" {
   subnet_id      = azurerm_subnet.db_subnet.id
-  route_table_id = azurerm_route_table.ap_rt.id
+  route_table_id = azurerm_route_table.azp_rt.id
 }
 
 # Create route table 
-resource "azurerm_route_table" "ap_rt" {
+resource "azurerm_route_table" "azp_rt" {
   name                          = "azure-project-route-table"
   location                      = azurerm_resource_group.azp_rg.location
-  resource_group_name           = azurerm_resource_group.azp_rg.name
+  resource_group_name           = azurerm_resource_group.ap_rg.name
   disable_bgp_route_propagation = false
 }  
