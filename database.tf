@@ -32,7 +32,7 @@ resource "azurerm_mysql_flexible_server" "wordpress" {
   resource_group_name = azurerm_resource_group.azp_rg.name
 
   administrator_login          = unknown
-  administrator_password =
+  administrator_password = unknown
   delegated_subnet_id          = unknown
   geo_redundant_backup_enabled = unknown
   private_dns_zone_id          = unknown
