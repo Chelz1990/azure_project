@@ -15,19 +15,9 @@ resource "random_string" "password" {
   lower = true
 }
 
-#  Create random name 
-resource "random_string" "dbname" {
-  length  = 6
-  lower   = true
-  numeric = true
-  special = false
-  upper   = false
-  min_numeric = 3
-}
-
 # Create MySQL Server
 resource "azurerm_mysql_flexible_server" "wordpress" {
-  name                = "${random_string.dbname.result}.wordpress.com"
+  name                = "aztpevcproject.wordpress.com"
   location            = azurerm_resource_group.azp_rg.location
   resource_group_name = azurerm_resource_group.azp_rg.name
 
