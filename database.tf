@@ -1,5 +1,14 @@
+#  Create random name 
+resource "random_string" "name" {
+  length  = 6
+  lower   = true
+  numeric = false
+  special = false
+  upper   = false
+}
+
 resource "azurerm_mysql_flexible_server" "wordpress" {
-  name                   = "azp.project.wordpress.com"
+  name                   = "${ransom_string.name.result}azpproject.wordpress.com"
   resource_group_name    = azurerm_resource_group.azp_rg.name
   location               = azurerm_resource_group.azp_rg.location
 }
