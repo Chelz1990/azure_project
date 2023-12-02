@@ -64,6 +64,6 @@ resource "azurerm_subnet_route_table_association" "db_rt" {
 resource "azurerm_route_table" "azp_rt" {
   name                          = "azure-project-route-table"
   location                      = azurerm_resource_group.azp_rg.location
-  resource_group_name           = azurerm_resource_group.ap_rg.name
+  resource_group_name           = azurerm_resource_group.azp_rg.name
   disable_bgp_route_propagation = false
 }  
